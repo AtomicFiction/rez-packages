@@ -12,7 +12,7 @@ description = \
     """
 
 build_requires = [
-    "gcc-4.8.2+"
+    "gcc-4.8.5"
 ]
 
 variants = [
@@ -24,5 +24,3 @@ uuid = "ilmbase"
 def commands():
     if building:
         env.PKG_CONFIG_PATH.append("{root}/lib/pkgconfig")
-        env.CPATH.append("{root}/include")        
-        env.LD_LIBRARY_PATH.append("{root}/lib")
