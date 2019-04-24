@@ -12,7 +12,7 @@ description = \
     """
 
 build_requires = [
-    "gcc-4.8.2+",
+    "gcc-4.8.5",
     'python-2.7'
 ]
 
@@ -22,8 +22,3 @@ variants = [
 
 uuid = "boost"
 
-def commands():
-    env.LD_LIBRARY_PATH.append("{root}/lib")
-    if building:
-        env.CPATH.append("{root}/include")
-        env.LIBRARY_PATH.append("{root}/lib")
