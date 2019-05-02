@@ -30,4 +30,4 @@ ExternalProject_add(
     BUILD_COMMAND make prefix=${CMAKE_INSTALL_PREFIX}
 )
 
-INSTALL(CODE "MESSAGE(STATUS Installing.)")
+#INSTALL(CODE "MESSAGE(STATUS Installing.)")
