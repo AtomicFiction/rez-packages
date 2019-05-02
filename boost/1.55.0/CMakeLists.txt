@@ -11,7 +11,17 @@ rez_set_archive(
     http://downloads.sourceforge.net/project/boost/boost/1.55.0/boost_1_55_0.tar.gz
 )
 
-set(b2_args -s NO_BZIP2=1 --prefix=${CMAKE_INSTALL_PREFIX} variant=release link=static,shared --toolset=gcc cflags=-fPIC cxxflags=-fPIC -j$ENV{REZ_BUILD_THREAD_COUNT})
+if($ENV{REZ_PLATFORM_VERSION} STREQUAL "linux")
+    message("Setting toolset to gcc")
+    set(toolset gcc)
+elseif($ENV{REZ_PLATFORM_VERSION} STREQUAL "osx")
+    message("Setting toolset to clang")
+    set(toolset clang)
+endif()
+
+message("TOOLSET ${toolset}")
+
+set(b2_args -s NO_BZIP2=1 --prefix=${CMAKE_INSTALL_PREFIX} variant=release link=static,shared --toolset=${toolset} cxxflags=-fPIC\ -DBOOST_HAS_INT128=1 -j$ENV{REZ_BUILD_THREAD_COUNT})
 
 if(${REZ_BUILD_INSTALL})
     set(install_cmd ./b2 install ${b2_args})
@@ -30,4 +40,4 @@ ExternalProject_add(
     BUILD_COMMAND ./b2 ${b2_args}
 )
 
-install(CODE "message(STATUS Installing...)")
+#install(CODE "message(STATUS Installing...)")
