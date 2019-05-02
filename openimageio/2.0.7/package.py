@@ -12,12 +12,14 @@ description = \
     related classes, utilities, and applications.
     """
 
-build_requires = [
+private_build_requires = [
     'cmake-3.2.2+<4',
-    "gcc-4.8.5"
+    #"gcc-4.8.5"
+    'clang-9.1.0'
 ]
 
 requires = [
+    'libjpeg',
     'ptex-2.1.28+<3',
     'boost-1.55',
     "ilmbase-2.2",
@@ -27,7 +29,8 @@ requires = [
 ]
 
 variants = [
-    ["platform-linux", "arch-x86_64", "os-CentOS-7", "python-2.7"]
+    #["platform-linux", "arch-x86_64", "os-CentOS-7", "python-2.7"]
+    ['platform-osx', 'arch-x86_64', 'os-osx-10.13', 'python-2.7']
 ]
 
 tools = [
