@@ -24,17 +24,21 @@ ExternalProject_add(
                -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON
                -DVERBOSE=TRUE
                -DCMAKE_CXX_STANDARD=11
-               -DCMAKE_CXX_FLAGS="-fext-numeric-literals"
+               #-DCMAKE_CXX_FLAGS="-fext-numeric-literals"
+               -DCMAKE_CXX_FLAGS=-DBOOST_HAS_INT128=1
                -DBUILDSTATIC=ON
                -DUSE_PYTHON=ON
                -DUSE_fPIC=ON
+               -DTIFF_INCLUDE_DIR=/Volumes/af/tools/thirdparty/darwin/tiff/4.0.6/include
+               -DTIFF_LIBRARY=/Volumes/af/tools/thirdparty/darwin/tiff/4.0.6/lib/libtiff.dylib
+               -DJPEG_INCLUDE_DIR=$ENV{REZ_LIBJPEG_ROOT}/include
+               -DJPEG_LIBRARY=$ENV{REZ_LIBJPEG_ROOT}/lib/libjpeg.dylib
                -DOIIO_BUILD_TESTS=OFF
                -DBOOST_ROOT=$ENV{REZ_BOOST_ROOT}
-               -DBOOST_INCLUDEDIR=$ENV{REZ_BOOST_ROOT}/include
-               -DBOOST_LIBRARYDIR=$ENV{REZ_BOOST_ROOT}/lib
                -DBoost_NO_SYSTEM_PATHS=ON
                -DILMBASE_ROOT_DIR=$ENV{REZ_ILMBASE_ROOT}
                -DOPENEXR_ROOT_DIR=$ENV{REZ_OPENEXR_ROOT}
+               -DUSE_OCIO=ON
                -DOCIO_PATH=$ENV{REZ_OPENCOLORIO_ROOT}
                -DCMAKE_SKIP_BUILD_RPATH=FALSE
                -DCMAKE_BUILD_WITH_INSTALL_RPATH=FALSE

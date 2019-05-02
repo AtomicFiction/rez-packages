@@ -11,16 +11,18 @@ description = \
     ILM's high dynamic-range (HDR) image file format library.
     """
 
+private_build_requires = [
+    #"gcc-4.8.2+"
+    'clang-9.1.0'
+]
+
 requires = [
     "ilmbase-2.2"
 ]
 
-build_requires = [
-    "gcc-4.8.2+"
-]
-
 variants = [
-    ["platform-linux", "arch-x86_64", "os-CentOS-7"]
+    #["platform-linux", "arch-x86_64", "os-CentOS-7"]
+    ['platform-osx', 'arch-x86_64', 'os-osx-10.13']
 ]
 
 tools = [
