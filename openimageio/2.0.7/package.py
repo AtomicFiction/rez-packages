@@ -13,7 +13,7 @@ description = \
     """
 
 private_build_requires = [
-    'cmake-3.2.2+<4',
+    #'cmake-3.2.2+<4',
     #"gcc-4.8.5"
     'clang-9.1.0'
 ]
