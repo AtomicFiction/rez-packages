@@ -35,7 +35,7 @@ tools = [
     "exrstdattr"
 ]
 
-uuid = "repository.openexr"
+uuid = "openexr"
 
 def commands():
     env.PATH.append("{root}/bin")
