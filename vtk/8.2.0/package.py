@@ -8,6 +8,7 @@ authors = [
 
 description = \
     """
+    VTK is an open source software for manipulating and displaying scientific data.
     """
 
 private_build_requires = [

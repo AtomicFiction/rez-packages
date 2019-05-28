@@ -3,11 +3,12 @@ name = "pcl"
 version = "1.9.1"
 
 authors = [
-    ""
+    "pointclouds.org"
 ]
 
 description = \
     """
+    The Point Cloud Library (PCL) is a standalone, large scale, open project for 2D/3D image and point cloud processing.
     """
 
 private_build_requires = [
@@ -29,6 +30,7 @@ variants = [
 uuid = "c867cfe7-52b2-4883-afbb-363ee2292eda"
 
 def commands():
-    env.PATH.append('{this.root}/bin')
-    env.CMAKE_MODULE_PATH.append('{this.root}/share/pcl-1.9')
+    if building:
+	env.PATH.append('{this.root}/bin')
+	env.CMAKE_MODULE_PATH.append('{this.root}/share/pcl-1.9')
 

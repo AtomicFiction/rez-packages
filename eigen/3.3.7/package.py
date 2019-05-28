@@ -11,7 +11,7 @@ description = \
     Eigen is a C++ template library for linear algebra: matrices, vectors, numerical solvers, and related algorithms.
     """
 
-build_requires = [
+private_build_requires = [
     "gcc-4.8+<5",
 ]
 

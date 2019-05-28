@@ -11,7 +11,7 @@ description = \
     FLANN is a library for performing fast approximate nearest neighbor searches in high dimensional spaces.
     """
 
-build_requires = [
+private_build_requires = [
     "gcc-4.8+<5",
 ]
 
