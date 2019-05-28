@@ -12,7 +12,7 @@ description = \
     """
 
 build_requires = [
-    "gcc-4.8+",
+    "gcc-4.8+<5",
 ]
 
 variants = [

@@ -11,8 +11,8 @@ description = \
     """
 
 private_build_requires = [
-    "gcc-4.8.3+<5"
-    "cmake-3.3+",
+    "gcc-4.8.3+<5",
+    "cmake-3.3+<4",
 ]
 
 variants = [
@@ -21,7 +21,3 @@ variants = [
 
 uuid = "1cb4f0ec-3141-47b0-84d0-1886a63637a3"
 
-#def commands():
-    #if building:
-        #env.CMAKE_MODULE_PATH.append('{this.root}/share/eigen3/cmake')
-        #env.PKG_CONFIG_PATH.append('{this.root}/share/pkgconfig')
