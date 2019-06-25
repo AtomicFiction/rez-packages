@@ -6,12 +6,15 @@ include(ExternalProject)
 
 set(pcl_version $ENV{REZ_BUILD_PROJECT_VERSION})
 
+set(link=static --toolset=gcc cflags=-fPIC cxxflags=-fPIC -j$ENV{REZ_BUILD_THREAD_COUNT})
+
 ExternalProject_add(
     pcl
     PREFIX pcl
     GIT_REPOSITORY https://github.com/PointCloudLibrary/pcl.git
     GIT_TAG pcl-${pcl_version}
     CMAKE_ARGS
+	-DCMAKE_BUILD_TYPE=Release
         -DCMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX}
         -DFLANN_ROOT=$ENV{REZ_FLANN_ROOT}
         -DBOOST_ROOT=$ENV{REZ_BOOST_ROOT}

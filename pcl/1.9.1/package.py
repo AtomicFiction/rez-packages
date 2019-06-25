@@ -19,7 +19,7 @@ private_build_requires = [
 ]
 
 requires = [
-    "boost-1.55",
+    "boost-1+<2",
     "eigen-3",
 ]
 
