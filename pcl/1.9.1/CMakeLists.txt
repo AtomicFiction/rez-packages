@@ -6,7 +6,7 @@ include(ExternalProject)
 
 set(pcl_version $ENV{REZ_BUILD_PROJECT_VERSION})
 
-set(link=static --toolset=gcc cflags=-fPIC cxxflags=-fPIC -j$ENV{REZ_BUILD_THREAD_COUNT})
+set(--toolset=gcc cflags=-fPIC cxxflags=-fPIC -j$ENV{REZ_BUILD_THREAD_COUNT})
 
 ExternalProject_add(
     pcl
