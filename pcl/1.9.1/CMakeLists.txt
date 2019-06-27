@@ -5,8 +5,8 @@ include(RezRepository)
 include(ExternalProject)
 
 set(pcl_version $ENV{REZ_BUILD_PROJECT_VERSION})
-
-set(--toolset=gcc cflags=-fPIC cxxflags=-fPIC -j$ENV{REZ_BUILD_THREAD_COUNT})
+set(PCL_SHARED_LIBS OFF)
+set(link=-static --toolset=gcc cflags=-fPIC cxxflags=-fPIC -j$ENV{REZ_BUILD_THREAD_COUNT})
 
 ExternalProject_add(
     pcl
@@ -21,6 +21,8 @@ ExternalProject_add(
         -DCMAKE_SKIP_BUILD_RPATH=FALSE
         -DCMAKE_BUILD_WITH_INSTALL_RPATH=FALSE
         -DCMAKE_INSTALL_RPATH=$ENV{REZ_BOOST_ROOT}/lib:${CMAKE_INSTALL_PREFIX}/lib
+	-Boost_USE_STATIC=ON
+	-FLANN_USE_STATIC=ON
 )
 
 INSTALL(CODE "MESSAGE(STATUS Installing.)")
